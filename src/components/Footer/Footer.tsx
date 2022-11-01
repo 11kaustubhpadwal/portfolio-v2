@@ -30,7 +30,7 @@ const Footer = () => {
       ))}
       <Grid item sx={footerDateItem} sm textAlign="end">
         <ContentText textVariant="label" color="#838B94">
-          {moment().format("h:mm mm/DD/yy")}
+          {moment().format("hh:mm DD/MM/yy")}
         </ContentText>
       </Grid>
     </Grid>
