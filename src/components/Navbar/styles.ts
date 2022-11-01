@@ -1,6 +1,5 @@
+import { defaultBorder } from "../../commonStyles";
 import { pxToRem } from "../../utils";
-
-const defaultBorder = `${pxToRem(2)} solid #1E2D3D`;
 
 export const emptyGridItem = {
   borderTop: defaultBorder,
