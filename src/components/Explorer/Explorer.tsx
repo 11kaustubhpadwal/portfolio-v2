@@ -5,7 +5,7 @@ import {
   Grid,
 } from "@mui/material";
 import accordionIcon from "../../assets/arrow-down.svg";
-import { accordionDetails, accordionSummary } from "./styles";
+import { accordion, accordionDetails, accordionSummary } from "./styles";
 import { ExplorerProps } from "./types";
 
 const Explorer = ({
@@ -14,7 +14,7 @@ const Explorer = ({
   ...rest
 }: ExplorerProps) => {
   return (
-    <Accordion disableGutters {...rest}>
+    <Accordion disableGutters {...rest} sx={accordion}>
       <AccordionSummary
         expandIcon={undefined}
         aria-controls="panel1a-content"

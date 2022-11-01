@@ -8,3 +8,5 @@ export const accordionSummary = {
   padding: 0,
   ".MuiAccordionSummary-content": { margin: 0 },
 };
+
+export const accordion = { ".MuiAccordionSummary-root": { minHeight: "auto" } };

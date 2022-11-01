@@ -19,7 +19,9 @@ const Skill = ({ skillName, skillDetails, isExpanded }: SkillProps) => {
             />
           </Grid>
           <Grid item>
-            <ContentText textVariant="codeSnippet">{skillName}</ContentText>
+            <ContentText textVariant="codeSnippet" color="#838B94">
+              {skillName}
+            </ContentText>
           </Grid>
         </Grid>
       }
@@ -38,6 +40,7 @@ const Skill = ({ skillName, skillDetails, isExpanded }: SkillProps) => {
                 <ContentText
                   textVariant="codeSnippet"
                   key={`skills-details-list-item-${index}`}
+                  color="#838B94"
                 >
                   {skillItem.name}
                 </ContentText>
