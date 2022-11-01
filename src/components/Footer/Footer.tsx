@@ -23,7 +23,7 @@ const Footer = () => {
           key={`footer-social-link-${index}`}
           sx={footerSocialLinkItem}
         >
-          <a href={socialLink.href}>
+          <a href={socialLink.href} target="_blank" rel="noReferrer">
             <img src={socialLink.icon} alt="social" />
           </a>
         </Grid>
