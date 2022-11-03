@@ -1,9 +1,5 @@
 export const navbarLinks = [
   {
-    name: "_hello",
-    href: "/",
-  },
-  {
     name: "_about me",
     href: "/about",
   },

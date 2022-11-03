@@ -14,6 +14,17 @@ const About = () => {
     <Page>
       <Grid container sx={{ height: "100%" }}>
         <Grid item sm={9}>
+          <Box pl={"2rem"} pt={"2rem"} pb={"1rem"}>
+            <ContentText textVariant="body" mb={3} color="#fff">
+              Hello! I am
+            </ContentText>
+            <ContentText textVariant="heading" mb={4} color="#fff">
+              Kaustubh Padwal
+            </ContentText>
+            <ContentText textVariant="subHeading" mb={2} color="#7EC6F1">
+              Frontend Developer
+            </ContentText>
+          </Box>
           <Box sx={aboutMainWrapper} paddingTop="2rem" paddingBottom="2rem">
             <Box padding="2rem" marginLeft="2rem" sx={aboutSecondaryWrapper}>
               <ContentText textVariant="body" mb={2} color="#838B94">
