@@ -34,7 +34,7 @@ const Contact = () => {
                 textVariant="body"
                 color="#A4A8AE"
                 mb={4}
-              >{`// Have project you'd like to discuss?`}</ContentText>
+              >{`// Have a project you'd like to discuss?`}</ContentText>
               <TextInput
                 label="_name"
                 name="name"
