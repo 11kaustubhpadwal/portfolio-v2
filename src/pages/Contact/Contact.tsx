@@ -4,6 +4,7 @@ import ButtonOutlined from "../../components/ButtonOutlined";
 import ContentText from "../../components/ContentText";
 import Page from "../../components/Page";
 import TextInput from "../../components/TextInput";
+import { initialContactFormData } from "./constants";
 import Details from "./Details";
 import {
   contactColumnWrapper,
@@ -13,16 +14,16 @@ import {
 } from "./styles";
 
 const Contact = () => {
-  const [contactFormData, setContactFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+  const [contactFormData, setContactFormData] = useState(
+    initialContactFormData
+  );
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) =>
     setContactFormData({ ...contactFormData, [e.target.name]: e.target.value });
+
+  const handleSubmit = () => setContactFormData(initialContactFormData);
 
   return (
     <Page>
@@ -59,7 +60,7 @@ const Contact = () => {
                 value={contactFormData.message}
               />
               <Box mt={3}>
-                <ButtonOutlined>Submit</ButtonOutlined>
+                <ButtonOutlined onClick={handleSubmit}>Submit</ButtonOutlined>
               </Box>
             </Grid>
             <Grid item sm={5} p={6}>
