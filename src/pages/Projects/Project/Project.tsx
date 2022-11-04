@@ -24,7 +24,7 @@ const Project = ({
             </ContentText>
           </Box>
           <Box sx={{ background: "#8A6E35" }}>
-            <a href={projectLink}>
+            <a href={projectLink} target="_blank" rel="noreferrer">
               <ContentText
                 textVariant="codeSnippet"
                 color="#000"
@@ -38,7 +38,7 @@ const Project = ({
           </Box>
         </Box>
       </Box>
-      <a href={codeLink}>
+      <a href={codeLink} target="_blank" rel="noreferrer">
         <ButtonOutlined>Check in Github</ButtonOutlined>
       </a>
     </Box>
