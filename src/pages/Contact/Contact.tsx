@@ -63,7 +63,7 @@ const Contact = () => {
                 <ButtonOutlined onClick={handleSubmit}>Submit</ButtonOutlined>
               </Box>
             </Grid>
-            <Grid item sm={5} p={6}>
+            <Grid item sm={5} p={6} sx={{ overFlowWrap: "break-word" }}>
               <ContentText textVariant="label" color="#838B94">
                 <JSKeyWord>const</JSKeyWord>{" "}
                 <JSVarName>contactFormData</JSVarName> = {`{`}
