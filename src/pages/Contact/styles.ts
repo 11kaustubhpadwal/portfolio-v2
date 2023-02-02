@@ -1,10 +1,14 @@
 import styled from "@emotion/styled";
 import { defaultBorder } from "../../commonStyles";
 
-export const contactColumnWrapper = {
-  padding: "1rem",
-  background: "#010409",
-  borderLeft: defaultBorder,
+export const contactColumnWrapper = (isMd: boolean) => {
+  return {
+    padding: "1rem",
+    background: "#010409",
+    borderLeft: isMd ? "none" : defaultBorder,
+    marginTop: isMd ? "2rem" : 0,
+    width: isMd ? "100%" : "auto",
+  };
 };
 
 export const JSKeyWord = styled.span`

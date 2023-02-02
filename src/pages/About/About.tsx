@@ -1,4 +1,4 @@
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, useMediaQuery, useTheme } from "@mui/material";
 import { StrikeThrough } from "../../commonStyles";
 import ContentText from "../../components/ContentText";
 import Page from "../../components/Page";
@@ -13,15 +13,23 @@ import {
 } from "./styles";
 
 const About = () => {
+  const theme = useTheme();
+  const isMd = useMediaQuery(theme.breakpoints.down("md"));
+  const isSm = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Page>
       <Grid container sx={{ height: "100%" }}>
-        <Grid item sm={9}>
+        <Grid item md={12} lg={9}>
           <Box pl={"2rem"} pt={"2rem"} pb={"1rem"}>
             <ContentText textVariant="body" mb={3} color="#fff">
               Hello! I am
             </ContentText>
-            <ContentText textVariant="heading" mb={4} color="#fff">
+            <ContentText
+              textVariant={isSm ? "subHeading" : "heading"}
+              mb={4}
+              color="#fff"
+            >
               <StrikeThrough>Kaustubh Padwal</StrikeThrough>
             </ContentText>
             <ContentText
@@ -33,8 +41,17 @@ const About = () => {
               <StrikeThrough>Frontend Developer</StrikeThrough>
             </ContentText>
           </Box>
-          <Box sx={aboutMainWrapper} paddingTop="2rem" paddingBottom="2rem">
-            <Box padding="1.5rem" marginLeft="2rem" sx={aboutSecondaryWrapper}>
+          <Box
+            sx={aboutMainWrapper(isSm)}
+            paddingTop="2rem"
+            paddingBottom="2rem"
+          >
+            <Box
+              padding={isSm ? 0 : "1.5rem"}
+              marginLeft="2rem"
+              marginRight={isSm ? "2rem" : "0"}
+              sx={aboutSecondaryWrapper(isSm)}
+            >
               <ContentText
                 textVariant="body"
                 mb={2}
@@ -72,7 +89,7 @@ const About = () => {
             </Box>
           </Box>
         </Grid>
-        <Grid item sm={3} sx={skillsWrapper}>
+        <Grid item md={12} lg={3} sx={skillsWrapper(isMd)}>
           <ContentText textVariant="label" color="#838B94" mb={2}>
             SKILLS
           </ContentText>

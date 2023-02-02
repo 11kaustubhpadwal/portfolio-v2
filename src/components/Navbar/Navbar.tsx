@@ -1,33 +1,12 @@
-import { Grid } from "@mui/material";
-import { Link, useLocation } from "react-router-dom";
-import ContentText from "../ContentText";
-import { navbarLinks } from "./constants";
-import { emptyGridItem, navLinkItem } from "./styles";
+import { useMediaQuery, useTheme } from "@mui/material";
+import MobileNavbar from "./MobileNavbar/MobileNavbar";
+import NonMobileNavbar from "./NonMobileNavbar/NonMobileNavbar";
 
 const Navbar = () => {
-  const location = useLocation();
+  const theme = useTheme();
+  const isSm = useMediaQuery(theme.breakpoints.down("sm"));
 
-  return (
-    <Grid container>
-      {navbarLinks.map((navLink, index) => (
-        <Grid
-          item
-          key={`navbar-link-item-${index}`}
-          sx={navLinkItem(location.pathname === navLink.href, index)}
-        >
-          <Link to={navLink.href}>
-            <ContentText
-              textVariant="label"
-              color={location.pathname === navLink.href ? "#F4BE52" : "#838B94"}
-            >
-              {navLink.name}
-            </ContentText>
-          </Link>
-        </Grid>
-      ))}
-      <Grid item sm sx={emptyGridItem} />
-    </Grid>
-  );
+  return isSm ? <MobileNavbar /> : <NonMobileNavbar />;
 };
 
 export default Navbar;

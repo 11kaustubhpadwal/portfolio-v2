@@ -1,5 +1,5 @@
-import { defaultBorder } from "../../commonStyles";
-import { pxToRem } from "../../utils";
+import { defaultBorder } from "../../../commonStyles";
+import { pxToRem } from "../../../utils";
 
 export const emptyGridItem = {
   borderTop: defaultBorder,

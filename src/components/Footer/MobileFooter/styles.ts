@@ -1,20 +1,20 @@
-import { defaultBorder } from "../../commonStyles";
+import { defaultBorder } from "../../../commonStyles";
 
-export const footerWrapper = { bottom: 0, postion: "absolute" };
+export const mobileFooterWrapper = { bottom: 0, postion: "absolute" };
 
-export const footerTextItem = {
+export const mobileFooterTextItem = {
   padding: ".5rem 1rem",
   borderTop: defaultBorder,
   borderRight: defaultBorder,
 };
 
-export const footerSocialLinkItem = {
+export const mobileFooterSocialLinkItem = {
   padding: ".35rem 1rem",
   borderTop: defaultBorder,
   borderRight: defaultBorder,
 };
 
-export const footerDateItem = {
+export const mobileFooterDateItem = {
   padding: ".5rem 1rem",
   borderTop: defaultBorder,
   borderRight: defaultBorder,

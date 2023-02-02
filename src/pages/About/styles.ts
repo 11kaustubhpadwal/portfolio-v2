@@ -1,17 +1,25 @@
 import styled from "@emotion/styled";
 import { defaultBorder } from "../../commonStyles";
 
-export const aboutMainWrapper = {
-  borderLeft: defaultBorder,
-  margin: "2rem 0 0 2rem",
+export const aboutMainWrapper = (isSm: boolean) => {
+  return {
+    borderLeft: isSm ? "none" : defaultBorder,
+    margin: isSm ? "0" : "2rem 0 0 2rem",
+  };
 };
 
-export const aboutSecondaryWrapper = { borderLeft: defaultBorder };
+export const aboutSecondaryWrapper = (isSm: boolean) => {
+  return { borderLeft: isSm ? "none" : defaultBorder };
+};
 
-export const skillsWrapper = {
-  padding: "1rem",
-  background: "#010409",
-  borderLeft: defaultBorder,
+export const skillsWrapper = (isMd: boolean) => {
+  return {
+    padding: "1rem",
+    background: "#010409",
+    borderLeft: isMd ? "none" : defaultBorder,
+    marginTop: isMd ? "4rem" : 0,
+    width: isMd ? "100%" : "auto",
+  };
 };
 
 export const informationTextHoverStyles = {

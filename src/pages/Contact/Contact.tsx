@@ -1,4 +1,4 @@
-import { Box, Grid } from "@mui/material";
+import { Box, Grid, useTheme, useMediaQuery } from "@mui/material";
 import { useState } from "react";
 import { StrikeThrough } from "../../commonStyles";
 import ButtonOutlined from "../../components/ButtonOutlined";
@@ -15,6 +15,10 @@ import {
 } from "./styles";
 
 const Contact = () => {
+  const theme = useTheme();
+  const isMd = useMediaQuery(theme.breakpoints.down("md"));
+  const isSm = useMediaQuery(theme.breakpoints.down("sm"));
+
   const [contactFormData, setContactFormData] = useState(
     initialContactFormData
   );
@@ -29,9 +33,9 @@ const Contact = () => {
   return (
     <Page>
       <Grid container sx={{ height: "100%" }}>
-        <Grid item sm={9}>
+        <Grid item md={12} lg={9}>
           <Grid container p={6} alignItems="center">
-            <Grid item sm={7} p={6}>
+            <Grid item sm={7} p={isSm ? 3 : 6}>
               <ContentText
                 textVariant="body"
                 color="#A4A8AE"
@@ -66,7 +70,7 @@ const Contact = () => {
                 </ButtonOutlined>
               </Box>
             </Grid>
-            <Grid item sm={5} p={6} sx={{ wordWrap: "break-word" }}>
+            <Grid item sm={5} p={isSm ? 3 : 6} sx={{ wordWrap: "break-word" }}>
               <ContentText textVariant="label" color="#838B94">
                 <JSKeyWord>const</JSKeyWord>{" "}
                 <JSVarName>contactFormData</JSVarName> = {`{`}
@@ -90,7 +94,7 @@ const Contact = () => {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item sm={3} sx={contactColumnWrapper}>
+        <Grid item md={12} lg={3} sx={contactColumnWrapper(isMd)}>
           <ContentText textVariant="label" color="#838B94" mb={2}>
             CONTACT
           </ContentText>

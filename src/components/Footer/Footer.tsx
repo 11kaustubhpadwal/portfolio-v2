@@ -1,40 +1,12 @@
-import { Grid } from "@mui/material";
-import moment from "moment";
-import ContentText from "../ContentText";
-import { footerSocialLinks } from "./constants";
-import {
-  footerDateItem,
-  footerSocialLinkItem,
-  footerTextItem,
-  footerWrapper,
-} from "./styles";
+import { useMediaQuery, useTheme } from "@mui/material";
+import MobileFooter from "./MobileFooter/MobileFooter";
+import NonMobileFooter from "./NonMobileFooter/NonMobileFooter";
 
 const Footer = () => {
-  return (
-    <Grid container alignItems="center" sx={footerWrapper}>
-      <Grid item sx={footerTextItem}>
-        <ContentText textVariant="label" color="#838B94">
-          find me on:
-        </ContentText>
-      </Grid>
-      {footerSocialLinks.map((socialLink, index) => (
-        <Grid
-          item
-          key={`footer-social-link-${index}`}
-          sx={footerSocialLinkItem}
-        >
-          <a href={socialLink.href} target="_blank" rel="noReferrer">
-            <img src={socialLink.icon} alt="social" />
-          </a>
-        </Grid>
-      ))}
-      <Grid item sx={footerDateItem} sm textAlign="end">
-        <ContentText textVariant="label" color="#838B94">
-          {moment().format("hh:mm DD/MM/yy")}
-        </ContentText>
-      </Grid>
-    </Grid>
-  );
+  const theme = useTheme();
+  const isSm = useMediaQuery(theme.breakpoints.down("sm"));
+
+  return isSm ? <MobileFooter /> : <NonMobileFooter />;
 };
 
 export default Footer;

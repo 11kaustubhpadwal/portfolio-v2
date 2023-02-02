@@ -14,7 +14,7 @@ const TopBar = () => {
       <Grid item>
         <Circle background={"#00CA4E"} />
       </Grid>
-      <Grid item sm textAlign={"center"}>
+      <Grid item xs textAlign={"center"}>
         <ContentText textVariant="label">kaustubh_padwal</ContentText>
       </Grid>
     </Grid>
