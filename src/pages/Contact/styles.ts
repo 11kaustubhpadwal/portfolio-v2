@@ -13,8 +13,16 @@ export const JSKeyWord = styled.span`
 
 export const JSVarName = styled.span`
   color: #4051b7;
+  :hover {
+    color: #fff;
+    opacity: 0.8;
+  }
 `;
 
 export const JSVarValue = styled.span`
   color: #f7bd45;
+  :hover {
+    color: #fff;
+    opacity: 0.8;
+  }
 `;

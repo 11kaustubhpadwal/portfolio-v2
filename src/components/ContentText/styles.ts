@@ -1,34 +1,21 @@
 import { pxToRem } from "../../utils";
 
+const commonTextStyles = {
+  fontWeight: 500,
+  fontFamily: "Fira Code",
+  lineHeight: "1.5rem",
+};
+
 export const textStyles = {
   heading: {
+    ...commonTextStyles,
     fontSize: pxToRem(62),
-    fontWeight: 500,
-    fontFamily: "Fira Code",
-    lineHeight: "1.5rem",
   },
   subHeading: {
+    ...commonTextStyles,
     fontSize: pxToRem(32),
-    fontWeight: 500,
-    fontFamily: "Fira Code",
-    lineHeight: "1.5rem",
   },
-  body: {
-    fontSize: pxToRem(18),
-    fontWeight: 500,
-    fontFamily: "Fira Code",
-    lineHeight: "2rem",
-  },
-  label: {
-    fontSize: pxToRem(16),
-    fontWeight: 500,
-    fontFamily: "Fira Code",
-    lineHeight: "1.5rem",
-  },
-  codeSnippet: {
-    fontSize: pxToRem(14),
-    fontWeight: 500,
-    fontFamily: "Fira Code",
-    lineHeight: "1.5rem",
-  },
+  body: { ...commonTextStyles, fontSize: pxToRem(18) },
+  label: { ...commonTextStyles, fontSize: pxToRem(16) },
+  codeSnippet: { ...commonTextStyles, fontSize: pxToRem(14) },
 };

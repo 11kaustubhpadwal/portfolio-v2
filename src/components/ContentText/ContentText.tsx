@@ -1,7 +1,7 @@
 import { Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { textStyles } from "./styles";
-import { TextProps } from "./types";
+import { ContentTextProps } from "./types";
 
 const ContentText = ({
   textVariant,
@@ -9,7 +9,7 @@ const ContentText = ({
   sx,
   children,
   ...rest
-}: TextProps) => {
+}: ContentTextProps) => {
   const [style, setStyle] = useState(textStyles["body"]);
 
   useEffect(() => {

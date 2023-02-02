@@ -15,3 +15,21 @@ a {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+@keyframes green-to-yellow {
+  from {
+    color: #00ca4e;
+  }
+  to {
+    color: #f7bd45;
+  }
+}
+
+@keyframes blue-to-white {
+  from {
+    color: #7ec6f1;
+  }
+  to {
+    color: #fff;
+  }
+}

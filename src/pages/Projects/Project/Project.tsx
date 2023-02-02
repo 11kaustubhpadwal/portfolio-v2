@@ -1,5 +1,9 @@
 import { Box } from "@mui/material";
-import { defaultBorder } from "../../../commonStyles";
+import {
+  defaultBorder,
+  informationItemHoverStyle,
+  StrikeThrough,
+} from "../../../commonStyles";
 import ButtonOutlined from "../../../components/ButtonOutlined";
 import ContentText from "../../../components/ContentText";
 import { projectDescriptionWrapper, projectInfoWrapper } from "./styles";
@@ -15,11 +19,15 @@ const Project = ({
     <Box>
       <Box p={3} sx={projectInfoWrapper} mb={4}>
         <ContentText textVariant="label" color="#9F7D3A">
-          {projectName}
+          <StrikeThrough>{projectName}</StrikeThrough>
         </ContentText>
         <Box sx={projectDescriptionWrapper} mt={3} pt={4} pb={4} mb={1}>
-          <Box sx={{ borderLeft: defaultBorder }} ml={2} pl={2} mb={3}>
-            <ContentText textVariant="codeSnippet" color="#838B94">
+          <Box sx={{ borderLeft: defaultBorder }} ml={2} pl={2} mb={3} mr={2}>
+            <ContentText
+              textVariant="codeSnippet"
+              color="#838B94"
+              sx={informationItemHoverStyle}
+            >
               {projectDescription}
             </ContentText>
           </Box>
@@ -32,14 +40,16 @@ const Project = ({
                 mt={1}
                 mb={1}
               >
-                see the project
+                <StrikeThrough>see the project</StrikeThrough>
               </ContentText>
             </a>
           </Box>
         </Box>
       </Box>
       <a href={codeLink} target="_blank" rel="noreferrer">
-        <ButtonOutlined>Check in Github</ButtonOutlined>
+        <ButtonOutlined>
+          <StrikeThrough>Check in Github</StrikeThrough>
+        </ButtonOutlined>
       </a>
     </Box>
   );

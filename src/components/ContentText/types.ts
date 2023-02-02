@@ -7,6 +7,6 @@ export type TextVariant =
   | "label"
   | "codeSnippet";
 
-export interface TextProps extends TypographyProps {
+export interface ContentTextProps extends TypographyProps {
   textVariant: TextVariant;
 }

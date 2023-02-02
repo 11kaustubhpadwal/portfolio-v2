@@ -1,6 +1,7 @@
 import { Grid } from "@mui/material";
 import fileIcon from "../../../../assets/file-fill.svg";
 import folderIcon from "../../../../assets/folder-fill.svg";
+import { informationItemHoverStyle } from "../../../../commonStyles";
 import ContentText from "../../../../components/ContentText";
 import Explorer from "../../../../components/Explorer";
 import { SkillProps } from "./types";
@@ -41,6 +42,7 @@ const Skill = ({ skillName, skillDetails, isExpanded }: SkillProps) => {
                   textVariant="codeSnippet"
                   key={`skills-details-list-item-${index}`}
                   color="#838B94"
+                  sx={informationItemHoverStyle}
                 >
                   {skillItem.name}
                 </ContentText>

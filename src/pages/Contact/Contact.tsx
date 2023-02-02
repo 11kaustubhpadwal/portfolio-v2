@@ -1,5 +1,6 @@
 import { Box, Grid } from "@mui/material";
 import { useState } from "react";
+import { StrikeThrough } from "../../commonStyles";
 import ButtonOutlined from "../../components/ButtonOutlined";
 import ContentText from "../../components/ContentText";
 import Page from "../../components/Page";
@@ -60,7 +61,9 @@ const Contact = () => {
                 value={contactFormData.message}
               />
               <Box mt={3}>
-                <ButtonOutlined onClick={handleSubmit}>Submit</ButtonOutlined>
+                <ButtonOutlined onClick={handleSubmit}>
+                  <StrikeThrough>Submit</StrikeThrough>
+                </ButtonOutlined>
               </Box>
             </Grid>
             <Grid item sm={5} p={6} sx={{ wordWrap: "break-word" }}>

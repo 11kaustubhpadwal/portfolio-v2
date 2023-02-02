@@ -1,6 +1,7 @@
 import { Grid } from "@mui/material";
 import fileIcon from "../../../../assets/file-fill.svg";
 import folderIcon from "../../../../assets/folder-fill.svg";
+import { informationItemHoverStyle } from "../../../../commonStyles";
 import ContentText from "../../../../components/ContentText";
 import Explorer from "../../../../components/Explorer";
 import { DetailProps } from "./types";
@@ -45,6 +46,7 @@ const Detail = ({
                   textVariant="codeSnippet"
                   key={`contact-info-details-list-item-${index}`}
                   color="#838B94"
+                  sx={informationItemHoverStyle}
                 >
                   {contactDetailItem.name}
                 </ContentText>
