@@ -1,4 +1,4 @@
-import { Grid, useMediaQuery, useTheme } from "@mui/material";
+import { Grid } from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import ContentText from "../../ContentText";
 import { navbarLinks } from "../constants";

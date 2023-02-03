@@ -1,4 +1,3 @@
-import { defaultBorder } from "../../../commonStyles";
 import { pxToRem } from "../../../utils";
 
 export const mobileNavLinkItem = (isActive: boolean) => {
