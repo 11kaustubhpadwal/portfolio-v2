@@ -33,7 +33,12 @@ const Detail = ({
       explorerDetails={
         <>
           {contactDetailsList.map((contactDetailItem, index) => (
-            <Grid container gap={1} alignItems="center">
+            <Grid
+              container
+              gap={1}
+              alignItems="center"
+              key={`contact-info-details-list-item-${index}`}
+            >
               <Grid item>
                 <img
                   src={fileIcon}
@@ -44,7 +49,6 @@ const Detail = ({
               <Grid item>
                 <ContentText
                   textVariant="codeSnippet"
-                  key={`contact-info-details-list-item-${index}`}
                   color="#838B94"
                   sx={informationItemHoverStyle}
                 >

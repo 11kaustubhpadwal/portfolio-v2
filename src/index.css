@@ -33,3 +33,12 @@ a {
     color: #fff;
   }
 }
+
+@keyframes loading-dot {
+  from {
+    opacity: 0;
+  }
+  to {
+    color: 1;
+  }
+}
