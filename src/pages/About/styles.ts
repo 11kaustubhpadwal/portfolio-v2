@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
 import { defaultBorder } from "../../commonStyles";
+import styled from "@emotion/styled";
 
 export const aboutMainWrapper = (isSm: boolean) => {
   return {

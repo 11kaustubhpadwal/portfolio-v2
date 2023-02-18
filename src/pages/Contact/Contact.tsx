@@ -1,17 +1,17 @@
-import { Box, Grid, useTheme, useMediaQuery } from "@mui/material";
-import { useState } from "react";
-import { sendContactFormEmail } from "../../api/contactForm";
-import { StrikeThrough } from "../../commonStyles";
-import ButtonOutlined from "../../components/ButtonOutlined";
-import ContentText from "../../components/ContentText";
-import Page from "../../components/Page";
-import TextInput from "../../components/TextInput";
+import { Box, Grid, useMediaQuery, useTheme } from "@mui/material";
 import { feedbackState, initialContactFormData } from "./constants";
+
+import ButtonOutlined from "../../components/ButtonOutlined";
 import ContactJSONView from "./ContactJSONView";
+import ContentText from "../../components/ContentText";
 import Details from "./Details";
-import LoadingState from "./LoadingState";
-import { contactColumnWrapper } from "./styles";
 import { FeedbackType } from "./types";
+import LoadingState from "./LoadingState";
+import { StrikeThrough } from "../../commonStyles";
+import TextInput from "../../components/TextInput";
+import { contactColumnWrapper } from "./styles";
+import { sendContactFormEmail } from "../../api/contactForm";
+import { useState } from "react";
 
 const Contact = () => {
   const theme = useTheme();
@@ -55,82 +55,78 @@ const Contact = () => {
     setContactFormData({ ...contactFormData, [e.target.name]: e.target.value });
 
   return (
-    <Page>
-      <Grid container sx={{ height: "100%" }}>
-        <Grid item md={12} lg={9}>
-          <Grid container p={6} alignItems="center">
-            <Grid item sm={loading ? 12 : 7} p={isSm ? 3 : 6}>
+    <Grid container sx={{ height: "100%" }}>
+      <Grid item md={12} lg={9}>
+        <Grid container p={6} alignItems="center">
+          <Grid item sm={loading ? 12 : 7} p={isSm ? 3 : 6}>
+            <ContentText
+              textVariant="body"
+              color="#A4A8AE"
+              mb={4}
+            >{`// Have a project you'd like to discuss?`}</ContentText>
+            {loading && <LoadingState />}
+            {!loading && (
+              <>
+                <TextInput
+                  label="_name"
+                  name="name"
+                  onChange={handleChange}
+                  value={contactFormData.name}
+                  disabled={loading}
+                />
+                <Box mt={3} mb={3}>
+                  <TextInput
+                    label="_email"
+                    name="email"
+                    onChange={handleChange}
+                    value={contactFormData.email}
+                    disabled={loading}
+                  />
+                </Box>
+                <TextInput
+                  label="_message"
+                  multiline
+                  maxRows={5}
+                  minRows={5}
+                  name="message"
+                  onChange={handleChange}
+                  value={contactFormData.message}
+                  disabled={loading}
+                />
+                <Box mt={3}>
+                  <ButtonOutlined
+                    onClick={handleSendContactFormDataEmail}
+                    disabled={loading}
+                  >
+                    <StrikeThrough>Submit</StrikeThrough>
+                  </ButtonOutlined>
+                </Box>
+              </>
+            )}
+            {feedback.isVisible && (
               <ContentText
                 textVariant="body"
-                color="#A4A8AE"
-                mb={4}
-              >{`// Have a project you'd like to discuss?`}</ContentText>
-              {loading && <LoadingState />}
-              {!loading && (
-                <>
-                  <TextInput
-                    label="_name"
-                    name="name"
-                    onChange={handleChange}
-                    value={contactFormData.name}
-                    disabled={loading}
-                  />
-                  <Box mt={3} mb={3}>
-                    <TextInput
-                      label="_email"
-                      name="email"
-                      onChange={handleChange}
-                      value={contactFormData.email}
-                      disabled={loading}
-                    />
-                  </Box>
-                  <TextInput
-                    label="_message"
-                    multiline
-                    maxRows={5}
-                    minRows={5}
-                    name="message"
-                    onChange={handleChange}
-                    value={contactFormData.message}
-                    disabled={loading}
-                  />
-                  <Box mt={3}>
-                    <ButtonOutlined
-                      onClick={handleSendContactFormDataEmail}
-                      disabled={loading}
-                    >
-                      <StrikeThrough>Submit</StrikeThrough>
-                    </ButtonOutlined>
-                  </Box>
-                </>
-              )}
-              {feedback.isVisible && (
-                <ContentText
-                  textVariant="body"
-                  mt={6}
-                  color={
-                    feedback.type === FeedbackType.Success
-                      ? "#5ECB50"
-                      : "#F7BD45"
-                  }
-                >
-                  {feedback.message}
-                </ContentText>
-              )}
-            </Grid>
-            {!loading && (
-              <ContactJSONView isSm={isSm} contactFormData={contactFormData} />
+                mt={6}
+                color={
+                  feedback.type === FeedbackType.Success ? "#5ECB50" : "#F7BD45"
+                }
+              >
+                {feedback.message}
+              </ContentText>
             )}
           </Grid>
-        </Grid>
-        <Grid item md={12} lg={3} sx={contactColumnWrapper(isMd)}>
-          <ContentText textVariant="label" color="#838B94" mb={2}>
-            CONTACT
-          </ContentText>
-          <Details />
+          {!loading && (
+            <ContactJSONView isSm={isSm} contactFormData={contactFormData} />
+          )}
         </Grid>
       </Grid>
-    </Page>
+      <Grid item md={12} lg={3} sx={contactColumnWrapper(isMd)}>
+        <ContentText textVariant="label" color="#838B94" mb={2}>
+          CONTACT
+        </ContentText>
+        <Details />
+      </Grid>
+    </Grid>
   );
 };
 
