@@ -53,9 +53,9 @@ const About = () => {
               color="#838B94"
               sx={informationTextHoverStyles}
             >
-              I am a <HighLight>frontend developer</HighLight> who is well
-              versed in modern javascript frameworks and libraries and ready to
-              solve new challenges.
+              I am a <HighLight>creative frontend developer</HighLight> who is
+              well versed in modern javascript frameworks and libraries and
+              ready to solve new challenges.
             </ContentText>
             <ContentText
               textVariant="body"
@@ -63,7 +63,7 @@ const About = () => {
               color="#838B94"
               sx={informationTextHoverStyles}
             >
-              I have <HighLight>2 years</HighLight> of{" "}
+              I have more than <HighLight>2 years</HighLight> of{" "}
               <HighLight>commercial work experience</HighLight>. I have
               experience working in an international environment.
             </ContentText>
